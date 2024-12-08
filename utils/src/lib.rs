@@ -1,9 +1,9 @@
-pub fn greet(name: &str) -> String {
-    format!("Hello, {}!", name)
-}
+use std::fs;
+use std::io::Error;
 
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+pub fn read_file_to_string(file_name: &str) -> Result<String, Error> {
+    let content = fs::read_to_string(file_name)?;
+    Ok(content)
 }
 
 #[cfg(test)]
@@ -12,7 +12,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+        let result = read_file_to_string("res/content.txt");
+        assert_eq!(result.expect("Failed to read test file").trim(), "This file contains this content");
     }
 }
