@@ -1,3 +1,6 @@
+use utils::greet;
+
 fn main() {
-    println!("Hello, world!");
+    let name = "World";
+    println!("{}", greet(name));
 }
