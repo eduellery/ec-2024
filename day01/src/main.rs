@@ -1,7 +1,7 @@
-use utils::read_file_to_string;
+use utils::read_file;
 
 fn main() {
-    let content = read_file_to_string("res/quest1.p3.in").expect("Unable to read file");
+    let content = read_file("res/quest01.p3.in").expect("Unable to read file");
     part1(content.clone());
     part2(content.clone());
     part3(content.clone());
