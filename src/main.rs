@@ -1,6 +1,6 @@
-use everybody_codes_2024::util::ansi::*;
-use everybody_codes_2024::util::parse::*;
-use everybody_codes_2024::*;
+use everybody_codes::util::ansi::*;
+use everybody_codes::util::parse::*;
+use everybody_codes::*;
 use std::env::args;
 use std::fs::read_to_string;
 use std::iter::empty;
@@ -32,14 +32,14 @@ fn main() {
     } in solutions
     {
         println!("{YELLOW}{event} Quest {quest}{RESET}");
-        solve(quest, 1, part1);
-        solve(quest, 2, part2);
-        solve(quest, 3, part3);
+        solve(event, quest, 1, part1);
+        solve(event, quest, 2, part2);
+        solve(event, quest, 3, part3);
     }
 }
 
-fn solve(quest: u32, part: u32, wrapper: fn(&str) -> String) {
-    let path = format!("input/q{quest:02}_p{part}.txt");
+fn solve(event: u32, quest: u32, part: u32, wrapper: fn(&str) -> String) {
+    let path = format!("input/event{event}/q{quest:02}_p{part}.txt");
 
     if let Ok(notes) = read_to_string(&path) {
         println!("    Part {part}: {BOLD}{WHITE}{}{RESET}", wrapper(&notes));

@@ -1,4 +1,4 @@
-use everybody_codes_2024::event2024::quest01::*;
+use everybody_codes::event2024::quest01::*;
 
 const EXAMPLE1: &str = "ABBAC";
 const EXAMPLE2: &str = "AxBCDDCAxD";
