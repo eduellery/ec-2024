@@ -77,5 +77,5 @@ macro_rules! solution {
 }
 
 fn event2024() -> Vec<Solution> {
-    vec![solution!(event2024, quest01)]
+    vec![solution!(event2024, quest01), solution!(event2024, quest02)]
 }
